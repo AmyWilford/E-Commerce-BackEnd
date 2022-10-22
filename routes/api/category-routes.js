@@ -15,9 +15,9 @@ router.get("/", async (req, res) => {
         },
       ],
     });
-    res.status(200).json(categoryData);
+    return res.status(200).json(categoryData);
   } catch (err) {
-    res.status(500).json(err);
+    return res.status(500).json(err);
   }
 });
 
@@ -34,13 +34,13 @@ router.get("/:id", async (req, res) => {
       ],
     });
     if (!individualCategory) {
-      res
+      return res
         .status(404)
         .json({ message: "Could not locate product with provided ID" });
     }
-    res.status(200).json(individualCategory);
+    return res.status(200).json(individualCategory);
   } catch (err) {
-    res.status(500).json(err);
+    return res.status(500).json(err);
   }
 });
 
@@ -49,11 +49,11 @@ router.post("/", async (req, res) => {
   try {
     const newCategory = await Category.create(req.body);
     if (!newCategory) {
-      res.status(404).json({ message: "Could not create category" });
+      return res.status(404).json({ message: "Could not create category" });
     }
-    res.status(200).json(newCategory);
+    return res.status(200).json(newCategory);
   } catch (err) {
-    res.status(500).json(err);
+    return res.status(500).json(err);
   }
 });
 
@@ -66,11 +66,11 @@ router.put("/:id", async (req, res) => {
       }
     });
     if (!updatedCategory) {
-      res.status(404).json({message: 'Invalid ID. Could not update Category'})
+      return res.status(404).json({message: 'Invalid ID. Could not update Category'})
     }
-    res.status(200).json(updatedCategory);
+    return res.status(200).json(updatedCategory);
   } catch (err) {
-    res.status(500).json(err);
+    return res.status(500).json(err);
   }
 });
 
@@ -83,11 +83,11 @@ router.delete("/:id", async (req, res) => {
       }
     });
     if(!deletedCategory){
-      res.status(404).json({message: 'Invald ID. Could not delete Category'})
+     return res.status(404).json({message: 'Invald ID. Could not delete Category'})
     }
-    res.status(200).json(deletedCategory)
+    return res.status(200).json(deletedCategory)
   } catch (err){
-    res.status(500).json(err);
+    return res.status(500).json(err);
   }
 });
 

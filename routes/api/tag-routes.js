@@ -9,9 +9,9 @@ router.get("/", async (req, res) => {
     const tagData = await Tag.findAll({
       include: [{ model: Product }],
     });
-    res.status(200).json(tagData);
+    return res.status(200).json(tagData);
   } catch (err) {
-    res.status(500).json(err);
+    return res.status(500).json(err);
   }
 });
 
@@ -23,11 +23,11 @@ router.get("/:id", async (req, res) => {
       include: [{model:Product}]
     })
     if (!individualTag){
-      res.status(404).json({message: 'Invalid ID. Could not locate Tag'});
+      return res.status(404).json({message: 'Invalid ID. Could not locate Tag'});
     }
-    res.status(200).json(individualTag);
+    return res.status(200).json(individualTag);
   }catch (err){
-    res.status(500).json(err);
+    return res.status(500).json(err);
   }
 });
 
@@ -36,11 +36,11 @@ router.post("/", async (req, res) => {
   try{
     const newTag = await Tag.create(req.body);
     if (!newTag){
-      res.status(404).json({message:'Could not create new Tag'});
+      return res.status(404).json({message:'Could not create new Tag'});
     }
-    res.status(200).json(newTag);
+    return res.status(200).json(newTag);
   }catch (err){
-    res.status(500).json(err);
+    return res.status(500).json(err);
   }
 });
 
@@ -54,11 +54,11 @@ router.put("/:id", async (req, res) => {
         },
       });
       if (!updatedTag){
-        res.status(404).json({message:'Invald ID: Could not update Tag'});
+        return res.status(404).json({message:'Invald ID: Could not update Tag'});
       }
-      res.status(200).json(updatedTag);
+      return res.status(200).json(updatedTag);
   }catch (err){
-    res.status(500).json(err);
+    return res.status(500).json(err);
   }
 });
 
@@ -71,11 +71,11 @@ router.delete("/:id", async (req, res) => {
       },
     })
     if(!deletedTag){
-      res.status(404).json({message:'Invalid ID. Could not delete Tag'});
+      return res.status(404).json({message:'Invalid ID. Could not delete Tag'});
     }
-    res.status(200).json(deletedTag);
+    return res.status(200).json(deletedTag);
   }catch (err){
-    res.status(500).json(err);
+    return res.status(500).json(err);
   }
 });
 

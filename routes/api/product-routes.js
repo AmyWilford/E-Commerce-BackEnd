@@ -11,9 +11,9 @@ router.get("/", async (req, res) => {
     const productData = await Product.findAll({
       include: [{ model: Category }, { model: Tag }],
     });
-    res.status(200).json(productData);
+    return res.status(200).json(productData);
   } catch (err) {
-    res.status(500).json(err);
+    return res.status(500).json(err);
   }
 });
 
@@ -26,13 +26,13 @@ router.get("/:id", async (req, res) => {
       indclude: [{ model: Category }, { model: Tag }],
     });
     if (!individualProduct) {
-      res
+      return res
         .status(404)
         .json({ message: "Invalid ID. Could not located Product" });
     }
-    res.status(200).json(individualProduct);
+   return res.status(200).json(individualProduct);
   } catch (err) {
-    res.status(500).json(err);
+    return res.status(500).json(err);
   }
 });
 
@@ -119,11 +119,11 @@ router.delete("/:id", async (req, res) => {
       },
     });
     if (!deletedProduct) {
-      res.status(404), json({ message: "Invald ID. Could not delete Product" });
+      return res.status(404), json({ message: "Invald ID. Could not delete Product" });
     }
-    res.status(200).json(deletedProduct);
+    return res.status(200).json(deletedProduct);
   } catch (err) {
-    res.status(500).json(err);
+    return res.status(500).json(err);
   }
 });
 
