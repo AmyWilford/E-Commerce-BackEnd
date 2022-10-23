@@ -52,10 +52,9 @@ quit | to exit SQL
 ```
 Next, seed the database by running the following in your terminal command line:
 ```
-node seeds/seed.js
+npm run seed
 ```
-Once the database is seeded you - you can access the application.
- To launch the server, in your terminal command line, run:
+Once the database is seeded you - you can access the application. To launch the server, in your terminal command line, run:
 ```
 npm start
 ```
