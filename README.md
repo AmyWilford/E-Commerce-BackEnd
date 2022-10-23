@@ -33,9 +33,9 @@ For installation, in your terminal command line, run:
 ```
 npm install
 ```
-In order to access the database you will need to establish an .env file in the root of your file system, and include the following within:
+In order to access the database you will need to establish an environment variable file (.env) in the root of your file system. In this file include:
 ```
-DB_NAME = 'ecommerce_db'
+DB_NAME = 'ecommerce_db' | database name
 DB_PASSWORD = '' | enter your password
 DB_USER = '' | enter root user
 ``` 
@@ -54,10 +54,16 @@ Next, seed the database by running the following in your terminal command line:
 ```
 node seeds/seed.js
 ```
-Once the database is seeded you - you can now access the application. To launch the server, in your terminal command line, run:
+Once the database is seeded you - you can access the application.
+ To launch the server, in your terminal command line, run:
 ```
 npm start
 ```
+When successfully launched, you will see the following message in your terminal:
+``` 
+App listening on port 3001!
+```
+
 ## Usage:
 
 This application requires the use of Insomnia in order to view and interact with the database information. Once you have completed the installation steps listed above, open Insomnia and navigate to localhost:3001

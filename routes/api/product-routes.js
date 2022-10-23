@@ -1,11 +1,9 @@
 const router = require("express").Router();
 const { Product, Category, Tag, ProductTag } = require("../../models");
 
-// The `/api/products` endpoint
+// Product Routes using `/api/products` endpoint
 
-// get all products
-// find all products
-// be sure to include its associated Category and Tag data
+// GET route to final all products including Category and Tag Data
 router.get("/", async (req, res) => {
   try {
     const productData = await Product.findAll({
@@ -17,9 +15,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-// get one product
-// find a single product by its `id`
-// be sure to include its associated Category and Tag data
+// GET route to find one product by its id including its Category and Tag Data
 router.get("/:id", async (req, res) => {
   try {
     const individualProduct = await Product.findByPk(req.params.id, {
@@ -36,7 +32,7 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-// create new product
+// POST route to create a new product
 router.post("/", (req, res) => {
   /* req.body should look like this...
     {
@@ -68,7 +64,7 @@ router.post("/", (req, res) => {
     });
 });
 
-// update product
+// PUT route to update product
 router.put("/:id", (req, res) => {
   // update product data
   Product.update(req.body, {
@@ -110,7 +106,7 @@ router.put("/:id", (req, res) => {
     });
 });
 
-// delete one product by its `id` value
+// DELETE route to remove one product by its `id` value
 router.delete("/:id", async (req, res) => {
   try {
     const deletedProduct = await Product.destroy({
@@ -127,4 +123,5 @@ router.delete("/:id", async (req, res) => {
   }
 });
 
+// Export router module
 module.exports = router;

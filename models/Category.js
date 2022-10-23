@@ -1,9 +1,11 @@
+// Import Model and Datatypes from Sequelize
 const { Model, DataTypes } = require('sequelize');
-
+// Import sequelize connection
 const sequelize = require('../config/connection.js');
-
+// Initialize Product Category (table) by extending off Sequelize's Model class
 class Category extends Model {}
 
+// Establish Cateogry Model fields and rules
 Category.init(
   {
     id: {
@@ -26,4 +28,5 @@ Category.init(
   }
 );
 
+// Export Category Model
 module.exports = Category;

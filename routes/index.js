@@ -1,4 +1,5 @@
 const router = require('express').Router();
+// Import all API routes from folder, and establish use of /api endpoint
 const apiRoutes = require('./api');
 
 router.use('/api', apiRoutes);
