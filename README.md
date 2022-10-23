@@ -33,6 +33,12 @@ For installation, in your terminal command line, run:
 ```
 npm install
 ```
+In order to access the database you will need to establish an .env file in the root of your file system, and include the following within:
+```
+DB_NAME = 'ecommerce_db'
+DB_PASSWORD = '' | enter your password
+DB_USER = '' | enter root user
+``` 
 Next, you will need to source the SQL database, in your terminal command line, run:
 ``` 
 mysql -uroot -p
@@ -58,9 +64,9 @@ This application requires the use of Insomnia in order to view and interact with
 
 To view information of this e-commerce sites backend database, you can run HTTP GET, POST, PUT, and DELETE requests from the following three end points:
 
-localhost:3001/api/categories --- to view all store categories
-localhost:3001/api/products --- to view all store products
-localhost:3001/api/tags --- to view all tags associated with products and categories
+- localhost:3001/api/categories --- to view all store categories
+- localhost:3001/api/products --- to view all store products
+- localhost:3001/api/tags --- to view all tags associated with products and categories
 
 ## Demo:
 

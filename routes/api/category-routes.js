@@ -8,12 +8,7 @@ const { Category, Product } = require("../../models");
 router.get("/", async (req, res) => {
   try {
     const categoryData = await Category.findAll({
-      include: [
-        {
-          model: Product,
-          attributes: ["product_name"],
-        },
-      ],
+      include: [{model: Product}]
     });
     return res.status(200).json(categoryData);
   } catch (err) {
