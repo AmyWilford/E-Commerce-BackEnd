@@ -16,9 +16,9 @@ The application uses Express.js and Sequelize to interact with a MySQL database,
 
 ## Technologies Used:
 
-- SQL 
+- MySQL 
 - Node.js
-- NPM Inquirer Package, v. 8.2.4
+- NPM Express
 - NPM Mysql2
 - NPM dotenv
 - NPM Sequelize
@@ -73,6 +73,30 @@ To view information of this e-commerce sites backend database, you can run HTTP 
 - localhost:3001/api/categories --- to view all store categories
 - localhost:3001/api/products --- to view all store products
 - localhost:3001/api/tags --- to view all tags associated with products and categories
+
+For POST & PUT requests - the req.body format is as follows:
+
+Categories:
+```
+{
+    "category_name": "test category"
+}
+```
+Products:
+```
+{
+    "product_name": "Basketball",
+    "price": 200.00,
+    "stock": 3,
+    "tagIds": [1, 2, 3, 4]
+}
+```
+Tags:
+```
+{
+    "tag_name": "test-tag"
+}
+```
 
 ## Demo:
 
