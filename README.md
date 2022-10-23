@@ -76,7 +76,7 @@ To view information of this e-commerce sites backend database, you can run HTTP 
 
 ## Demo:
 
-[View a video walk through of this application in use]()
+[View a video walk through of this application in use](https://drive.google.com/file/d/1wPuiH01ohV6w8u4t-gDgiyLQVpcYNPfM/view)
 
 ## License: 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
