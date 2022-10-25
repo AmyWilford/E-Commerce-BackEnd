@@ -12,7 +12,7 @@ Product.belongsTo(Category, {
 // Establish Table Connection ->Categories have many Products
 Category.hasMany(Product, {
   foreignKey: 'category_id',
-  onDelete: 'CASCADE' //IS THIS RIGHT?
+  onDelete: 'CASCADE' 
 });
 
 // Establish Table Connection -> Products belongToMany Tags (through ProductTag)
